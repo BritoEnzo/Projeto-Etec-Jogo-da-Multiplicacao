@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quebracuca - Jogo da Multiplicação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="../css/site.css">
+</head>
+
+<body>
+    <header class="topo">
+        <ul>
+            <li><img src="../img/multi.png" alt="Multiplicação"></li>
+            <li><h2>Jogo da Multiplicação</h2></li>
+            <li><img src="../img/equal.png" alt="Igual"></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <div class="menuEsquerda">
+            <form id="formMenu">
+                <input type="text" name="Nome" id="idNome" placeholder="Digite seu Nome">
+                <div class="radio">
+                    <input type="radio" name="tempo" id="idBotao30seg" onclick="tempo_timer(0.5)">
+                    <label for="idBotao30seg">30 segundos</label>
+                    <input type="radio" name="tempo" id="idBotao60seg" onclick="tempo_timer(1)">
+                    <label for="idBotao60seg">1 Minuto</label>
+                    <input type="radio" name="tempo" id="idBotao90seg" onclick="tempo_timer(1.5)">
+                    <label for="idBotao90seg">1,5 Minutos</label>
+                </div>
+                <input type="button" id="idStart" value="INICIAR" onclick="iniciar_timer()">
+            </form>
+        </div>
+    </div>
+
+    <div class="botaovl">
+        <form id="formCalcular">
+            <input type="text" id="idNumero1" readonly>
+            <div class="xis">
+                <img src="../img/multi.png" alt="Multiplicação">
+            </div>
+            <input type="number" id="idNumero2" readonly>
+            <div class="igual">
+                <img src="../img/equal.png" alt="Igual">
+            </div>
+            <input type="number" id="idResposta">
+            <input type="button" value="Conferir" onclick="verifica()">
+            <input type="text" id="idPontos" readonly>
+        </form>
+    </div>
+
+    <div id="display"></div>
+
+    <script src="../js/site.js"></script>
+</body>
+</html>
